@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Projeto ONG Equoterapia</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        // Configura o Tailwind para usar a fonte Inter como padrão
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para os blocos do canvas */
+        .canvas-card {
+            @apply bg-white p-4 rounded-lg shadow-lg border border-gray-200 h-full flex flex-col;
+        }
+        .canvas-card h2 {
+            @apply text-base font-bold text-gray-700 uppercase tracking-wide mb-3 pb-2 border-b-2;
+        }
+        .canvas-card .content {
+            @apply text-sm text-gray-800 flex-grow;
+        }
+        .canvas-card .content ul {
+            @apply list-disc pl-5 space-y-2;
+        }
+        .canvas-card .content ul ul {
+            @apply list-disc pl-5 space-y-1 mt-1;
+        }
+        .canvas-card .content strong.sub-heading {
+            @apply block text-sm font-semibold text-gray-900 mt-3 mb-1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900 p-4 md:p-8">
+
+    <div class="container mx-auto max-w-7xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-blue-900">
+            Canvas do Modelo de Negócios - ONG Equoterapia
+        </h1>
+
+        <!-- 
+          Layout principal do Canvas 
+          Grid de 5 colunas em desktop, que se empilham em 2 linhas (para Atividades/Recursos e Relacionamento/Canais)
+          Grid de 1 coluna em mobile
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
+
+            <!-- Coluna 1: Parcerias-Chave -->
+            <div class="md:row-span-2">
+                <div class="canvas-card border-t-4 border-blue-500">
+                    <h2 class="border-blue-200">Parcerias-Chave</h2>
+                    <div class="content">
+                        <ul>
+                            <li><strong>ANDE-BRASIL:</strong> Essencial para certificação, método e credibilidade.</li>
+                            <li><strong>Profissionais de Saúde:</strong> (Médicos, Fisios, Psicólogos) para encaminhamento.</li>
+                            <li><strong>Prefeituras e Secretarias:</strong> (Saúde, Educação, Social) para convênios e encaminhamentos (CRAS, CREAS).</li>
+                            <li><strong>Universidades:</strong> Parcerias para pesquisa, estágios (fisioterapia, psicologia, TO).</li>
+                            <li><strong>Empresas Locais:</strong> Para patrocínio (marketing de causa, doações).</li>
+                            <li><strong>Fornecedores:</strong> (Ração, feno, equipamentos, veterinários).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Atividades e Recursos -->
+            <div class="flex flex-col space-y-4">
+                <!-- Atividades-Chave -->
+                <div class="canvas-card border-t-4 border-blue-400">
+                    <h2 class="border-blue-100">Atividades-Chave</h2>
+                    <div class="content">
+                        <ul>
+                            <li>Sessões Terapêuticas (hipoterapia).</li>
+                            <li>Cuidado e Treinamento dos cavalos.</li>
+                            <li>Gestão de Equipe Interdisciplinar.</li>
+                            <li>Captação de Recursos (Fundraising).</li>
+                            <li>Gestão Administrativa e Legal.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Recursos-Chave -->
+                <div class="canvas-card border-t-4 border-blue-400">
+                    <h2 class="border-blue-100">Recursos-Chave</h2>
+                    <div class="content">
+                        <ul>
+                            <li>Equipe Interdisciplinar Qualificada.</li>
+                            <li>Cavalos treinados e dóceis.</li>
+                            <li>Estrutura Física (picadeiro, acessibilidade, baias, salas).</li>
+                            <li>Equipamentos (selas adaptadas, capacetes).</li>
+                            <li>Certificação ANDE-BRASIL.</li>
+                            <li>Seguro de Responsabilidade Civil.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Proposta de Valor -->
+            <div class="md:row-span-2">
+                <div class="canvas-card bg-green-50 border-t-4 border-green-600">
+                    <h2 class="border-green-200">Proposta de Valor</h2>
+                    <div class="content">
+                        <strong class="sub-heading">Para Beneficiários (Pacientes/Famílias):</strong>
+                        <ul>
+                            <li>"Promover o desenvolvimento biopsicossocial, a reabilitação e a inclusão social através do cavalo."</li>
+                            <li>"Um ambiente seguro, profissional e acolhedor para terapia e desenvolvimento de potencialidades."</li>
+                        </ul>
+                        
+                        <strong class="sub-heading">Para Financiadores (Doadores/Empresas):</strong>
+                        <ul>
+                            <li>"Oportunidade de gerar impacto social direto e transparente na reabilitação e qualidade de vida."</li>
+                            <li>"Uma plataforma confiável para investimento social (marketing de causa)."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 4: Relacionamento e Canais -->
+            <div class="flex flex-col space-y-4">
+                <!-- Relacionamento -->
+                <div class="canvas-card border-t-4 border-yellow-500">
+                    <h2 class="border-yellow-200">Relacionamento (Públicos)</h2>
+                    <div class="content">
+                        <strong class="sub-heading">Com Beneficiários/Famílias:</strong>
+                        <ul>
+                            <li>Acolhimento, empatia.</li>
+                            <li>Relacionamento terapêutico e profissional.</li>
+                            <li>Acompanhamento da evolução (feedbacks).</li>
+                        </ul>
+                        <strong class="sub-heading">Com Financiadores:</strong>
+                        <ul>
+                            <li>Transparência Total (prestação de contas).</li>
+                            <li>Reconhecimento (site, eventos).</li>
+                            <li>"Nutrição" do relacionamento (mostrar impacto).</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Canais -->
+                <div class="canvas-card border-t-4 border-yellow-500">
+                    <h2 class="border-yellow-200">Canais</h2>
+                    <div class="content">
+                        <strong class="sub-heading">Para Beneficiários:</strong>
+                        <ul>
+                            <li>Rede de encaminhamento (médicos, escolas).</li>
+                            <li>Mídias sociais (foco em educação).</li>
+                            <li>Google Maps (busca local).</li>
+                        </ul>
+                        <strong class="sub-heading">Para Financiadores:</strong>
+                        <ul>
+                            <li>Site institucional (portal de transparência).</li>
+                            <li>Mídias sociais (foco em *storytelling*).</li>
+                            <li>Eventos de captação.</li>
+                            <li>Prospecção ativa (visitas a empresas).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 5: Segmentos de Público -->
+            <div class="md:row-span-2">
+                <div class="canvas-card border-t-4 border-yellow-600">
+                    <h2 class="border-yellow-300">Segmentos de Público</h2>
+                    <div class="content">
+                        <strong class="sub-heading">1. Beneficiários (Quem servimos):</strong>
+                        <ul>
+                            <li>Pessoas com deficiência (Paralisia Cerebral, TEA, Down).</li>
+                            <li>Pessoas com necessidades específicas (TDAH, saúde mental).</li>
+                            <li>Famílias dos beneficiários (rede de apoio).</li>
+                        </ul>
+                        <strong class="sub-heading">2. Financiadores (Quem nos apoia):</strong>
+                        <ul>
+                            <li>Pessoas Físicas (PF): Doadores.</li>
+                            <li>Pessoas Jurídicas (PJ): Empresas (doação, Leis de Incentivo).</li>
+                            <li>Governo: Via editais públicos (FIA).</li>
+                            <li>Fundações: Editais privados.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fim do grid principal -->
+
+        <!-- Seção Inferior: Financeiro -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Estrutura de Custos -->
+            <div class="canvas-card bg-red-50 border-t-4 border-red-500">
+                <h2 class="border-red-200">Estrutura de Custos</h2>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <strong>Custos Fixos (Alto):</strong>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Pessoal:</strong> Salários da equipe (o maior custo).</li>
+                                <li><strong>Manutenção dos Cavalos:</strong> Alimentação, veterinário, ferrador.</li>
+                                <li><strong>Infraestrutura:</strong> Aluguel/manutenção, água, luz.</li>
+                                <li><strong>Administrativos:</strong> Contador, taxas, seguro.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Custos Variáveis:</strong>
+                            <ul class="list-disc pl-5">
+                                <li>Aquisição/manutenção de equipamentos.</li>
+                                <li>Material de escritório e pedagógico.</li>
+                                <li>Custos de eventos de captação.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fontes de Captação (Receitas) -->
+            <div class="canvas-card bg-emerald-50 border-t-4 border-emerald-500">
+                <h2 class="border-emerald-200">Fontes de Captação (Receitas)</h2>
+                <div class="content">
+                    <ul>
+                        <li>Doações de Pessoas Físicas (doadores recorrentes "padrinhos").</li>
+                        <li>Editais Públicos e Privados (projetos).</li>
+                        <li>Leis de Incentivo Fiscal (FIA, Fundo do Idoso).</li>
+                        <li>Patrocínio Empresarial (PJ).</li>
+                        <li>Eventos Beneficentes (rifas, bazares, jantares).</li>
+                        <li>Programas de Nota Fiscal (se aplicável).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- Fim da seção financeira -->
+
+    </div> <!-- Fim do container -->
+
+</body>
+</html>
